@@ -69,7 +69,7 @@ jobs:
         uses: actions/jekyll-build-pages@v1
         with:
           source: ./.vitepress/dist
-          destination: ./
+          destination: ./_site
 
         # 上传 _site 的资源，用于后续部署
       - name: Upload artifact
