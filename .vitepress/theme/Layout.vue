@@ -20,8 +20,8 @@ function all_posts(){
     }
 }
 
-function show_dir(val){
-    var sho_div = val.nextElementSibling;
+function show_dir(e){
+    var sho_div = e.target.nextElementSibling;
     if(sho_div.style.display == "none"){
         sho_div.style.display = "block";
     }else{
@@ -29,14 +29,10 @@ function show_dir(val){
     }
 }   
 
-var dir_title = ref(null)
+var dir_color = isDark.value?"darkgray":"lightgray";
+
 onMounted(()=>{
-    for(var tit of dir_title.value){
-        tit.style.backgroundColor ="lightgray";
-        tit.addEventListener("click", function(e){
-            show_dir(e.target);
-        });
-    }
+    
 })
 
 </script>
@@ -55,17 +51,17 @@ onMounted(()=>{
         <ul>
             <div v-for="post of layout_dat" key="post.url">
                 <div v-if="post.items">
-                    - <span ref="dir_title">{{post.text}}</span>
+                    - <span @click="show_dir" :style="{'backgroundColor':dir_color}">{{post.text}}</span>
                     <div :id="post.text" style="display:none">
                         <div v-for="post2 of post.items" key="post2.items">
                             <div v-if="post2.items">
                                 &nbsp;&nbsp;
-                                |- <span ref="dir_title">{{post2.text}}</span>
+                                |- <span @click="show_dir" :style="{'backgroundColor':dir_color}">{{post2.text}}</span>
                                 <div :id="post2.text" style="display:none">
                                     <div v-for="post3 of post2.items" key="post3.items">
                                         <div v-if="post3.items">
                                             &nbsp;&nbsp;&nbsp;&nbsp;
-                                            |-- <span ref="dir_title">{{post3.text}}</span>
+                                            |-- <span @click="show_dir" :style="{'backgroundColor':dir_color}">{{post3.text}}</span>
                                             <div :id="post3.text" style="display:none"></div>
                                         </div>
                                         <div v-if="post3.link">
