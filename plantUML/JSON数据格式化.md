@@ -1,4 +1,7 @@
 #### JSON数据格式
+
+#plantUML #json
+
 - [json官网](https://www.json.org/json-en.html)
 
 JSON(Javascript 对象标记)是一个轻量级的数据交换格式. 我们可以使用plantUML来可视化一个json对象.
