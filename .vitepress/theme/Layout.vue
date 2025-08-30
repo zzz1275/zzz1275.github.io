@@ -9,61 +9,7 @@ const { isDark } = useData();
 import {onMounted} from 'vue'
 
 const isShow = ref(false);
-const copyInfoText = ref("复制成功，可以去页面粘贴了~");
 
-const enableTransitions = () =>
-  "startViewTransition" in document &&
-  window.matchMedia("(prefers-reduced-motion: no-preference)").matches;
-
-provide("toggle-appearance", async ({ clientX: x, clientY: y }: MouseEvent) => {
-  if (!enableTransitions()) {
-    isDark.value = !isDark.value;
-    return;
-  }
-
-  const clipPath = [
-    `circle(0px at ${x}px ${y}px)`,
-    `circle(${Math.hypot(
-      Math.max(x, innerWidth - x),
-      Math.max(y, innerHeight - y)
-    )}px at ${x}px ${y}px)`,
-  ];
-
-  await document.startViewTransition(async () => {
-    isDark.value = !isDark.value;
-    await nextTick();
-  }).ready;
-
-  document.documentElement.animate(
-    { clipPath: isDark.value ? clipPath.reverse() : clipPath },
-    {
-      duration: 300,
-      easing: "ease-in",
-      pseudoElement: `::view-transition-${isDark.value ? "old" : "new"}(root)`,
-    }
-  );
-});
-//一键复制
-function copy() {
-  var clipboard = new ClipboardJS(".copyBtn", {
-    target: function (trigger) {
-      return trigger.nextElementSibling;
-    },
-  });
-
-  clipboard.on("success", function (e) {
-    // console.info("Text:", e.text);
-    isShow.value = true;
-    copyInfoText.value = "复制成功，可以去页面粘贴了~";
-    e.clearSelection();
-  });
-  setTimeout(() => {
-    isShow.value = false;
-  }, 3000);
-  clipboard.on("error", function (e) {
-    copyInfoText.value = "复制失败，请手动复制~";
-  });
-}
 
 var add_ctt = ref(null);
 function all_posts(){
@@ -75,7 +21,7 @@ function all_posts(){
 }
 
 function show_dir(val){
-    var sho_div = document.getElementById(val.textContent);
+    var sho_div = val.nextElementSibling;
     if(sho_div.style.display == "none"){
         sho_div.style.display = "block";
     }else{
@@ -86,6 +32,7 @@ function show_dir(val){
 var dir_title = ref(null)
 onMounted(()=>{
     for(var tit of dir_title.value){
+        tit.style.backgroundColor ="lightgray";
         tit.addEventListener("click", function(e){
             show_dir(e.target);
         });
@@ -101,7 +48,6 @@ onMounted(()=>{
       <button
         class="VPBadge warning fix_btn"
         @click="all_posts()"
-        data-clipboard-target=".vp-doc"
       >
       +
       </button>
@@ -113,7 +59,8 @@ onMounted(()=>{
                     <div :id="post.text" style="display:none">
                         <div v-for="post2 of post.items" key="post2.items">
                             <div v-if="post2.items">
-                                &nbsp;&nbsp;|- <span ref="dir_title">{{post2.text}}</span>
+                                &nbsp;&nbsp;
+                                |- <span ref="dir_title">{{post2.text}}</span>
                                 <div :id="post2.text" style="display:none">
                                     <div v-for="post3 of post2.items" key="post3.items">
                                         <div v-if="post3.items">
