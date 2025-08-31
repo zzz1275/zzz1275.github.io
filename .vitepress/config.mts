@@ -86,6 +86,14 @@ export default defineConfig({
       { text: '主页', link: '/' },
       { text: '标签', link: '/tags' },
       { text: '我', link: '/introduce' },
+      { text: '资源', items:[
+          {
+            text: '电影', items:[{text:'雅图在线', link:"https://www.yatu.tv/"}]
+          },
+          {
+            text: 'AI绘图', items:[{text:'pollinations', link:"https://pollinations.ai/"}]
+          },
+      ]},
     ],
     sidebar: trans_rst,
     socialLinks: [
