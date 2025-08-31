@@ -14,9 +14,9 @@ export default {
 
     var urls = watchedFiles.filter(file => {
         if(    /tags.md$/.test(file) 
-            || /lastposts.md$/.test(file)
-            || /posts.md$/.test(file)
+            || /allposts.md$/.test(file)
             || /index.md$/.test(file)
+            || /random.md$/.test(file)
         ){
             return false;
         }

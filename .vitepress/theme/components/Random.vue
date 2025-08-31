@@ -15,6 +15,5 @@ function getRandomElement(arr) {
 
 var ran_url = getRandomElement(data.urls).replace(/.md$/, '.html');
 
-
-router.go(ran_url);
+router.go(`/${ran_url}`);
 </script>
