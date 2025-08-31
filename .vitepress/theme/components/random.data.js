@@ -21,7 +21,9 @@ export default {
             return false;
         }
         return true;
-    })
+    }).map(function(url){
+        return url.replace(/.md$/, '.html');
+    });
     
     return {urls};
   }

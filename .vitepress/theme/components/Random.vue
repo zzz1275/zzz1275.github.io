@@ -13,7 +13,7 @@ function getRandomElement(arr) {
   return arr[randomIndex];
 }
 
-var ran_url = getRandomElement(data.urls).replace(/.md$/, '.html');
+var ran_url = getRandomElement(data.urls)
 
 router.go(`/${ran_url}`);
 </script>
