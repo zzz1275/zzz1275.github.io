@@ -78,8 +78,6 @@ function trans_hsh(pre, hsh){
 
 var trans_rst = trans_hsh("/.", layout_hs);
 
-console.log(trans_rst);
-
 export default defineConfig({
   title: "zzz",
   description: "zzz' blog",
@@ -91,7 +89,7 @@ export default defineConfig({
     ],
     sidebar: trans_rst,
     socialLinks: [
-      { icon: 'x', link: 'http://xxx.com' }
+      { icon: 'github', link: 'https://zzz1275.github.io/' }
     ],
     docFooter: {
         prev: false,

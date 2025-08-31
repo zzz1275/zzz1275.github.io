@@ -36,7 +36,6 @@ export default {
         var tags = [];
         
         var no_codesrc = src.replace(/```[^`]+?```/g,"").replace(/`[^`]+?`/g,"");
-        console.log(no_codesrc);
         var arr_arr = no_codesrc.matchAll(/(\s+#)(([\u4e00-\u9fa5]|\w)+)/g);
          for (var arr of arr_arr){
             var tag = arr[2];
