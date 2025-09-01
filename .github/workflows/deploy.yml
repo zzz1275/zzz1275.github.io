@@ -48,8 +48,8 @@ jobs:
           # 保留 Git 信息
           fetch-depth: 0
       
-      - name: Restore file timestamps
-        uses: stefanbuck/action-restore-timestamps@v1
+      - name: restore timestamps
+        uses: chetan/git-restore-mtime-action@v2
       
       # 设置使用 Node.js 版本
       - name: Use Node.js ${{ matrix.node-version }}
