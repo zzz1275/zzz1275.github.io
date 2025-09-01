@@ -5,10 +5,12 @@
   "scripts": {
     "docs:dev": "vitepress dev --host",
     "docs:build": "vitepress build",
+    "postdocs:build": "node ./.vitepress/aft_bld.js",
     "docs:preview": "vitepress preview"
   },
   "type": "module",
   "dependencies": {
+    "fast-glob": "^3.3.3",
     "flexsearch": "^0.7.43",
     "vitepress-plugin-search": "^1.0.4-alpha.22"
   }
