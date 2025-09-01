@@ -121,7 +121,7 @@ D:\Install\Git\bin\bash.exe -c "D:/Install/python/Scripts/argos-translate --from
 D:\Install\Git\bin\bash.exe -c "D:/Install/python/Scripts/argospm list"
 ```
 
-![](argotranslate安装-命令行调用.PNG)
+![](./argotranslate安装-命令行调用.png)
 
 
 
@@ -137,7 +137,7 @@ libretranslate.exe --load-only en,zh,zt --host 0.0.0.0
 
 看到的界面如下.
 
-![](argotranslate安装-界面.PNG)
+![](./argotranslate安装-界面.png)
 
 也可以通过API方式发送http请求:
 
@@ -145,7 +145,7 @@ libretranslate.exe --load-only en,zh,zt --host 0.0.0.0
 curl -X POST http://localhost:5000/translate -d q="Hello" -d source=en -d target=zh
 ```
 
-![](argotranslate安装-api使用.PNG)
+![](./argotranslate安装-api使用.png)
 
 
 
@@ -186,7 +186,7 @@ try:
 
 ```
 
-
+![](./argotranslate安装-改源码.png)
 
 
 
