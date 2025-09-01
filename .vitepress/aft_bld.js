@@ -36,6 +36,7 @@ async function listFiles() {
       var now = new Date();
       
       var dst_file = file.replace(/\.md$/,".html");
+      console.log(`.vitepress/dist/${dst_file}: ${mti}`)
       fs.utimes(`.vitepress/dist/${dst_file}`, now, mti, (err) => {
           if (err) {
             console.error('无法设置时间:', err);
