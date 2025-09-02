@@ -29,6 +29,7 @@ var files_filt = watchedFiles.filter(file => {
         || /lastposts.md$/.test(file)
         || /posts.md$/.test(file)
         || /index.md$/.test(file)
+        || /^_nav.+/.test(file)
     ){
         return false;
     }
@@ -88,13 +89,15 @@ export default defineConfig({
       { text: '我', link: '/introduce' },
       { text: '资源', items:[
           {
-            text: '电影', items:[{text:'雅图在线', link:"https://www.yatu.tv/"}]
+            text: '电视剧', items:[{text:'雅图', link:"https://www.yatu.tv/"}]
           },
           {
             text: 'AI绘图', items:[{text:'pollinations', link:"https://pollinations.ai/"}]
           },
+          { text: '音乐搜索', link: '/_nav/music_search' },
       ]},
       { text: '随机', link: '/random' },
+      
     ],
     sidebar: trans_rst,
     socialLinks: [

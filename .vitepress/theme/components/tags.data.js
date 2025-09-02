@@ -18,6 +18,7 @@ export default {
             || /lastposts.md$/.test(file)
             || /posts.md$/.test(file)
             || /index.md$/.test(file)
+            || /^_nav.+/.test(file)
         ){
             return false;
         }

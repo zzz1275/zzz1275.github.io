@@ -17,6 +17,7 @@ export default {
             || /allposts.md$/.test(file)
             || /index.md$/.test(file)
             || /random.md$/.test(file)
+            || /^_nav.+/.test(file)
         ){
             return false;
         }

@@ -2,7 +2,7 @@
 <script setup>
 import { ref, computed } from 'vue'
 // 导入构建时生成的数据，注意路径要对
-import {data} from '../lastposts.data.js' 
+import {data} from './lastposts.data.js' 
 
 const postsPerPage = ref(10); // 每页显示多少篇
 const currentPage = ref(1); // 当前在哪一页
