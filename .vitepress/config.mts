@@ -94,7 +94,6 @@ export default defineConfig({
           {
             text: 'AI绘图', items:[{text:'pollinations', link:"https://pollinations.ai/"}]
           },
-          { text: '音乐搜索', link: '/_nav/music_search' },
       ]},
       { text: '随机', link: '/random' },
       

@@ -58,6 +58,7 @@ function formatDate(date) {
         <div class="post-item">
             <a :href="post.url" class="post-title">{{ post.title }}</a>
             <span class="post-date">{{ formatDate(post.date) }}</span>
+            <p v-if="post.excerpt" class="post-excerpt">{{ post.excerpt }}</p> 
         </div>
       </li>
     </ul>
