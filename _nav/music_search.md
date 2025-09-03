@@ -165,7 +165,7 @@ var ply = ref(null);
 
 onMounted(() => {
     if (typeof window !== 'undefined') {
-        import("APlayer").then((obj)=>{
+        import("aplayer").then((obj)=>{
             var APlayer = obj.default;
             console.log(APlayer.default);
             ply = new APlayer({
