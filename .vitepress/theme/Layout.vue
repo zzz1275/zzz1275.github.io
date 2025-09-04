@@ -41,48 +41,50 @@ onMounted(()=>{
   <!-- <DefaultTheme.Layout /> -->
   <Layout>
     <template #doc-before>
-      <button
-        class="VPBadge warning fix_btn"
+      <span
+        class="fix_btn"
         @click="all_posts()"
       >
-      +
-      </button>
-      <div ref="add_ctt" class="fix_div">
-        <ul>
-            <div v-for="post of layout_dat" key="post.url">
-                <div v-if="post.items">
-                    - <span @click="show_dir" :style="{'backgroundColor':dir_color}">{{post.text}}</span>
-                    <div :id="post.text" style="display:none">
-                        <div v-for="post2 of post.items" key="post2.items">
-                            <div v-if="post2.items">
-                                &nbsp;&nbsp;
-                                |- <span @click="show_dir" :style="{'backgroundColor':dir_color}">{{post2.text}}</span>
-                                <div :id="post2.text" style="display:none">
-                                    <div v-for="post3 of post2.items" key="post3.items">
-                                        <div v-if="post3.items">
-                                            &nbsp;&nbsp;&nbsp;&nbsp;
-                                            |-- <span @click="show_dir" :style="{'backgroundColor':dir_color}">{{post3.text}}</span>
-                                            <div :id="post3.text" style="display:none"></div>
-                                        </div>
-                                        <div v-if="post3.link">
-                                            &nbsp;&nbsp;&nbsp;&nbsp;
-                                            |-- <a :href="'/'+post3.link" class="post-title">{{post3.text}}</a>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-list-icon size-6"><path d="M3 12h.01"></path><path d="M3 18h.01"></path><path d="M3 6h.01"></path><path d="M8 12h13"></path><path d="M8 18h13"></path><path d="M8 6h13"></path></svg>
+      </span>
+      <div ref="add_ctt" class="fix_div" style="width:50%; height:30%; overflow-y: auto">
+        <div style="padding:8px">
+            <ul>
+                <div v-for="post of layout_dat" key="post.url" class="pst_itm">
+                    <div v-if="post.items">
+                        - <button @click="show_dir" :style="{'backgroundColor':dir_color}">{{post.text}}</button>
+                        <div :id="post.text" style="display:none">
+                            <div v-for="post2 of post.items" key="post2.items" class="pst_itm">
+                                <div v-if="post2.items">
+                                    &nbsp;&nbsp;
+                                    |- <button @click="show_dir" :style="{'backgroundColor':dir_color}">{{post2.text}}</button>
+                                    <div :id="post2.text" style="display:none">
+                                        <div v-for="post3 of post2.items" key="post3.items" class="pst_itm">
+                                            <div v-if="post3.items">
+                                                &nbsp;&nbsp;&nbsp;&nbsp;
+                                                |-- <button @click="show_dir" :style="{'backgroundColor':dir_color}">{{post3.text}}</button>
+                                                <div :id="post3.text" style="display:none"></div>
+                                            </div>
+                                            <div v-if="post3.link">
+                                                &nbsp;&nbsp;&nbsp;&nbsp;
+                                                |-- <a :href="'/'+post3.link" class="post-title">{{post3.text}}</a>
+                                            </div>
                                         </div>
                                     </div>
+                                    
                                 </div>
-                                
-                            </div>
-                            <div v-if="post2.link">
-                                  &nbsp;&nbsp;|- <a :href="'/'+post2.link" class="post-title">{{post2.text}}</a>
+                                <div v-if="post2.link">
+                                      &nbsp;&nbsp;|- <a :href="'/'+post2.link" class="post-title">{{post2.text}}</a>
+                                </div>
                             </div>
                         </div>
                     </div>
+                    <div v-if="post.link">
+                        - <a :href="'/'+post.link" class="post-title">{{post.text}}</a>
+                    </div>
                 </div>
-                <div v-if="post.link">
-                    - <a :href="'/'+post.link" class="post-title">{{post.text}}</a>
-                </div>
-            </div>
-        </ul>
+            </ul>
+        </div>
       </div>
     </template>
     <template #doc-footer-before>
@@ -122,15 +124,15 @@ onMounted(()=>{
 .fix_btn {
   position: fixed; 
   top: 150px; 
-  left: 30px;
+  right: 30px;
   z-index: 9;
 }
 .fix_div {
     display:none; 
     position: fixed; 
     top:150px; 
-    left:100px; 
-    background-color:#969faf;
+    right:60px; 
+    background-color:rgb(246, 250, 240);
     z-index: 9;
 }
 #snackbar {
@@ -178,5 +180,16 @@ onMounted(()=>{
     bottom: 50px;
     opacity: 1;
   }
+}
+
+.pst_itm {
+    background-color: #e2e2e3;
+    margin-top:1px;
+    border-radius:4px;
+}
+.pst_itm:hover{
+    transform: scale(1.01);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: #f6f6f7;
 }
 </style>
