@@ -10,9 +10,11 @@
     <div class="flx_row row_spb">
         <div></div>
         <div class="flx_row row_spb">
-            <input type="text" ref="searchText" class="bdr_gry"></input>
-            <span class="w20"></span>
-            <button @click="search_music()" class="bdr_gry">搜索</button>
+            <input type="text" ref="searchText" class="bdr_gry bdr_rds"></input>
+            <span style="width:5px"></span>
+            <button @click="search_music()" class="bdr_gry bdr_rds">搜索</button>
+            <span style="width:5px"></span>
+            <button @click="music_delete()" class="bdr_gry bdr_rds">删除</button>
         </div>
         <div></div>
     </div>
@@ -78,6 +80,9 @@
 .bdr_gry{
     border:1px solid gray;
 }
+.bdr_rds{
+    border-radius:5px;
+}
 .rbs_100{
     flex-basis: 100%;
 }
@@ -130,6 +135,7 @@ function search_music(){
     })
 }
 
+
 var audio_arr = [];
 var audio_inf =  {
     fixed: false, // 不开启吸底模式
@@ -162,6 +168,7 @@ function click_song(id){
 }
 
 var ply = ref(null);
+var cur_ind = -1;
 
 onMounted(() => {
     if (typeof window !== 'undefined') {
@@ -173,6 +180,9 @@ onMounted(() => {
                 audio: audio_arr, // 音乐信息
                 ...audio_inf, // 其他配置信息
             });
+            ply.on("listswitch", function(e){
+                cur_ind = e.index;
+            });
         }).catch(e=>{
             console.log(e);
         })
@@ -180,5 +190,14 @@ onMounted(() => {
     
     
 })
-
+function music_delete(ind){
+    if(cur_ind == -1){
+        return;
+    }
+    ply.list.remove(cur_ind);
+    if(cur_ind >=ply.list.length){
+        cur_ind = ply.list.length-1;
+        ply.list.switch(cur_ind);
+    }
+}
 </script>
