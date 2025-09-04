@@ -142,7 +142,6 @@ function search_music(){
             });
             song.all_sgr = sgr_names.join(",");
         });
-        console.log(song_list.value);
     })
 }
 
@@ -168,7 +167,6 @@ function click_song(id){
             return sgr.name;
         });
         var sgrs = sgr_names.join(",");
-        console.log(ply);
         ply.list.add([{
             name: `${song_info.song}`, 
             artist: sgrs, 
@@ -185,7 +183,6 @@ onMounted(() => {
     if (typeof window !== 'undefined') {
         import("aplayer").then((obj)=>{
             var APlayer = obj.default;
-            console.log(APlayer.default);
             ply = new APlayer({
                 container: document.getElementById("aplayer"),
                 audio: audio_arr, // 音乐信息
