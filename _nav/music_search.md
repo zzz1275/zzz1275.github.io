@@ -22,9 +22,10 @@
         <div style="padding:5px"></div>
         <div class="flx_row rbs_100 row_spb">
             <div class=""></div>
-            <div class="flx_row flx_cel row_spb" style="width:80%">
+            <div class="flx_row flx_cel row_spb yas_ctr" style="width:80%">
                 <span ><img :src="item.cover" class="h40 w40"></img></span> 
-                <span class="" style="align-self: center;">{{ item.song }}</span> 
+                <span class="" >{{ item.song }}</span> 
+                <span class="">{{ item.all_sgr }}</span> 
                 <button @click="click_song(item.id)" style="align-self: center;">点歌</button>
             </div>
             <div class=""></div>
@@ -73,6 +74,9 @@
 }
 .row_ctr{
     justify-content: center; 
+}
+.yas_ctr{
+    align-items: center;
 }
 .bdr_grn{
     border:1px solid #00FF00;
@@ -131,7 +135,14 @@ function search_music(){
         return;
     }
     axios.get(`https://api.vkeys.cn/v2/music/tencent?word=${search_text}`).then((res) => {
-        song_list.value = res.data.data
+        song_list.value = res.data.data;
+        song_list.value.map(song=>{
+            var sgr_names = song.singer_list.map(sgr=>{
+                return sgr.name
+            });
+            song.all_sgr = sgr_names.join(",");
+        });
+        console.log(song_list.value);
     })
 }
 
