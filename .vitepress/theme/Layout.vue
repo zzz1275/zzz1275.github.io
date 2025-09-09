@@ -48,7 +48,7 @@ onMounted(()=>{
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-list-icon size-6"><path d="M3 12h.01"></path><path d="M3 18h.01"></path><path d="M3 6h.01"></path><path d="M8 12h13"></path><path d="M8 18h13"></path><path d="M8 6h13"></path></svg>
       </span>
       <div ref="add_ctt" class="fix_div" style="width:50%; height:30%; overflow-y: auto">
-        <div style="padding:8px">
+        <div style="padding:10px">
             <ul>
                 <div v-for="post of layout_dat" key="post.url" class="pst_itm">
                     <div v-if="post.items">
