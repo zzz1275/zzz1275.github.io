@@ -14,7 +14,10 @@
     "axios": "^1.11.0",
     "fast-glob": "^3.3.3",
     "flexsearch": "^0.7.43",
+    "highlight.js": "^11.11.1",
     "hls.js": "^1.6.11",
+    "marked": "^16.1.1",
+    "marked-highlight": "^2.2.2",
     "vitepress-plugin-search": "^1.0.4-alpha.22"
   }
 }
