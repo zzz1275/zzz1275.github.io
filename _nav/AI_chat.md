@@ -1,5 +1,5 @@
 <script setup>
-import AIchat from '../.vitepress/theme/components/AI_chat.vue';
+import AIchat from '/.vitepress/theme/components/AI_chat.vue';
 
 </script>
 

@@ -92,9 +92,9 @@ export default defineConfig({
             text: '电视剧', items:[{text:'雅图', link:"https://www.yatu.tv/"}]
           },
           {
-            text: 'AI问答', items:[{text:'gpt', link:"/_nav/AI_chat"}]
+            text: 'AI问答', items:[{text:'gpt', link:"/_nav/AI_chat.html"}]
           },
-          { text: '音乐', link: '/_nav/music_search' },
+          { text: '音乐', link: '/_nav/music_search.html' },
       ]},
       { text: '随机', link: '/random' },
       
