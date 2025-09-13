@@ -1,0 +1,15 @@
+/* 浅色模式 */
+:root {
+  --c-mine: #ffb380;
+  --c-mine-bg: white;
+  --c-folder-bg: lightgray;
+  --c-text: dark;
+}
+
+/* 深色模式 */
+.dark {
+  --c-mine: #ff3e00;
+  --c-mine-bg: black;
+  --c-folder-bg: darkgray;
+  --c-text: white;
+}

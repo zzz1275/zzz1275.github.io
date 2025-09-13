@@ -52,17 +52,17 @@ onMounted(()=>{
             <ul>
                 <div v-for="post of layout_dat" key="post.url" class="pst_itm">
                     <div v-if="post.items">
-                        - <button @click="show_dir" :style="{'backgroundColor':dir_color}">{{post.text}}</button>
+                        - <button @click="show_dir" style="backgroundColor:var(--c-folder-bg)">{{post.text}}</button>
                         <div :id="post.text" style="display:none">
                             <div v-for="post2 of post.items" key="post2.items" class="pst_itm">
                                 <div v-if="post2.items">
                                     &nbsp;&nbsp;
-                                    |- <button @click="show_dir" :style="{'backgroundColor':dir_color}">{{post2.text}}</button>
+                                    |- <button @click="show_dir" style="backgroundColor:var(--c-folder-bg)">{{post2.text}}</button>
                                     <div :id="post2.text" style="display:none">
                                         <div v-for="post3 of post2.items" key="post3.items" class="pst_itm">
                                             <div v-if="post3.items">
                                                 &nbsp;&nbsp;&nbsp;&nbsp;
-                                                |-- <button @click="show_dir" :style="{'backgroundColor':dir_color}">{{post3.text}}</button>
+                                                |-- <button @click="show_dir" style="backgroundColor:var(--c-folder-bg)">{{post3.text}}</button>
                                                 <div :id="post3.text" style="display:none"></div>
                                             </div>
                                             <div v-if="post3.link">
@@ -132,8 +132,9 @@ onMounted(()=>{
     position: fixed; 
     top:150px; 
     right:60px; 
-    background-color:rgb(246, 250, 240);
+    background-color:var(--c-mine-bg);
     z-index: 9;
+    border: 1px solid var(--c-mine);
 }
 #snackbar {
   visibility: hidden;
@@ -183,13 +184,13 @@ onMounted(()=>{
 }
 
 .pst_itm {
-    background-color: #e2e2e3;
+    background-color: var(--c-mine-bg);
     margin-top:1px;
     border-radius:4px;
 }
 .pst_itm:hover{
     transform: scale(1.01);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    background-color: #f6f6f7;
+    background-color: var(--c-mine);
 }
 </style>
