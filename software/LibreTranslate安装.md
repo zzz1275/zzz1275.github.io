@@ -121,8 +121,6 @@ D:\Install\Git\bin\bash.exe -c "D:/Install/python/Scripts/argos-translate --from
 D:\Install\Git\bin\bash.exe -c "D:/Install/python/Scripts/argospm list"
 ```
 
-![](LibreTranslate-cmd调用.png)
-
 
 
 ### API方式
@@ -144,8 +142,6 @@ libretranslate.exe --load-only en,zh,zt --host 0.0.0.0
 ```sh
 curl -X POST http://localhost:5000/translate -d q="Hello" -d source=en -d target=zh
 ```
-
-![](LibreTranslate-api_use.png)
 
 
 
@@ -185,8 +181,6 @@ try:
         except BaseException:
 
 ```
-
-![](LibreTranslate-改src.png)
 
 
 

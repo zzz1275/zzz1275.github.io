@@ -5,9 +5,10 @@
     <label>请提问:</label>
   </div>  
   <textarea ref="user_input"  class="bdr_gry bdr_rds" style="width:100%"/>
-  <select class="form-control">
-    <option>gpt-4.1-mini</option>
-    <option>gpt-4</option>
+  <select class="form-control" ref="usr_mod">
+    <option>o4-mini</option>
+    <option>gpt-5-nano</option>
+    <option>gemini-2.5-flash-lite</option>
   </select>
   <span class="" style="padding:4px"></span>
   <button class="bdr_gry bdr_rds" style="" @click="user_click">提交</button>
@@ -20,7 +21,7 @@
 </template>
 
 <style>
-@import "/node_modules/highlight.js/styles/vs2015.min.css";
+
 .h20{
     height:20px;
 }
@@ -118,12 +119,19 @@ const marked = new Marked(
 );
 
 var user_input = ref(null);
-
+var usr_mod = ref(null);
 var ai_out = ref(null);
 
 var user_click = function(){
     var ipt = user_input.value.value;
     var out = ai_out.value.value;
+    var mod = usr_mod.value.value;
+    if(mod == "o4-mini"){
+    }else if(mod == "gpt-5-nano"){
+    }else if(mod == "gemini-2.5-flash-lite"){
+    }else{
+        mod = "openai"
+    }
     axios.post(`https://text.pollinations.ai/`,{
         "messages": [
             { "role": "system", "content": `使用markdown格式回答问题` },
