@@ -85,8 +85,8 @@ export default defineConfig({
   themeConfig: {
     nav: [
       { text: '主页', link: '/' },
-      { text: '标签', link: '/tags' },
-      { text: '我', link: '/introduce' },
+      { text: '标签', link: '/_nav/tags' },
+      { text: '我', link: '/_nav/introduce' },
       { text: '资源', items:[
           {
             text: '电视剧', items:[{text:'雅图', link:"https://www.yatu.tv/"}]

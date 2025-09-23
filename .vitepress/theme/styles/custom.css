@@ -4,6 +4,7 @@
   --c-mine-bg: white;
   --c-folder-bg: lightgray;
   --c-text: dark;
+  --c-bdr:lightgray;
 }
 
 /* 深色模式 */
@@ -12,4 +13,5 @@
   --c-mine-bg: black;
   --c-folder-bg: darkgray;
   --c-text: white;
+  --c-bdr:darkgray;
 }
