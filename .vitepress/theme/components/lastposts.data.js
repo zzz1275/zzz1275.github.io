@@ -29,14 +29,14 @@ export default {
     var lastPosts = files_filt.map((file) => {
 		var sta = fs.statSync(file);
 		var mti = new Date(sta.mtime)
-		var src = fs.readFileSync(file, 'utf8');
+//		var src = fs.readFileSync(file, 'utf8');
         var url = file.replace(/.md$/, '.html');
 		return {
 			//"src": src,
 			"date": mti,
 			"url": url,
 			"title": url,
-			"excerpt": createExcerpt(src),
+//			"excerpt": createExcerpt(src),
 		}
     });
     var lastPosts_srt = lastPosts.sort((a, b)=>{

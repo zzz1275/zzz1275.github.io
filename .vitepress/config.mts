@@ -89,10 +89,10 @@ export default defineConfig({
       { text: '我', link: '/_nav/introduce' },
       { text: '资源', items:[
           {
-            text: '电视剧', items:[{text:'雅图', link:"https://www.yatu.tv/"}]
+            text: '电视剧', link:"https://cechi16.com"
           },
           {
-            text: 'AI问答', items:[{text:'gpt', link:"/_nav/AI_chat.html"}]
+            text: 'AI相关', items:[{text:'问答', link:"/_nav/AI_chat.html"}]
           },
           { text: '音乐', link: '/_nav/music_search.html' },
       ]},
