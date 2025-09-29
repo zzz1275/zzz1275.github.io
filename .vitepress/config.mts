@@ -108,5 +108,12 @@ export default defineConfig({
         prev: false,
         next: false
     }
-  }
+  },
+  head:[
+    ['script',{
+        defer:'', 
+        src:'https://cloud.umami.is/script.js', 
+        'data-website-id': 'b4c576d5-68f3-481d-be84-ecc49332e351'
+    }],
+  ]
 })
