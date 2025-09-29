@@ -109,13 +109,4 @@ export default defineConfig({
         next: false
     }
   },
-  siteAnalytics: [
-    {
-      provider: "umami",
-      options: {
-        id: "b4c576d5-68f3-481d-be84-ecc49332e351",
-        src: "https://cloud.umami.is/script.js",
-      },
-    },
-  ],
 })

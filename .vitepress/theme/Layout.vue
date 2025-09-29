@@ -32,7 +32,11 @@ function show_dir(e){
 var dir_color = isDark.value?"darkgray":"lightgray";
 
 onMounted(()=>{
-    
+    const script = document.createElement('script');
+    script.defer = true;
+    script.src = 'https://cloud.umami.is/script.js';
+    script.setAttribute('data-website-id', 'b4c576d5-68f3-481d-be84-ecc49332e351');
+    document.head.appendChild(script);
 })
 
 </script>
